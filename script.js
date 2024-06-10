@@ -4,3 +4,22 @@ function toggleMenu() {
   menu.classList.toggle("open");
   icon.classList.toggle("open");
 }
+
+// Hover effect for project sections
+document.querySelectorAll('.color-container').forEach((project) => {
+  project.addEventListener('mouseenter', () => {
+    document.querySelectorAll('.color-container').forEach((item) => {
+      if (item !== project) {
+        item.classList.add('blur');
+      } else {
+        item.classList.add('focus');
+      }
+    });
+  });
+
+  project.addEventListener('mouseleave', () => {
+    document.querySelectorAll('.color-container').forEach((item) => {
+      item.classList.remove('blur', 'focus');
+    });
+  });
+});
