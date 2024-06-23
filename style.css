@@ -24,7 +24,7 @@ p {
   position: absolute;
   top: 10px;
   left: 10px;
-  width: 200px; /* Adjust as per your design */
+  width: 150px; /* Adjust as per your design */
   height: auto;
   z-index: 100; 
 }
