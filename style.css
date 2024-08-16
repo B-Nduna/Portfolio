@@ -327,7 +327,6 @@ section {
 .about > p {
   font-size: 14px;
   color: #606060;
-  border: 1px solid #e8e8e8;
   padding: 6px 14px;
   border-radius: 16px;
   margin-bottom: 12px;
@@ -440,7 +439,7 @@ section {
 }
 
 .email-icon {
-  height: 2.5rem;
+  height: 1.6rem;
 }
 
 /* FOOTER SECTION */
