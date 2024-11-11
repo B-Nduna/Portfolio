@@ -9,6 +9,16 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background: linear-gradient(145deg, #d9d9d9, #f1f1f1, #e6e6e6);
+  background-size: 400% 400%;
+  animation: metallic-animation 2s ease infinite;
+  color: #7c7c7c;
+}
+
+@keyframes metallic-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 html {
