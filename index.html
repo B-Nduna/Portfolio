@@ -1,223 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>B-Nduna's Portfolio</title>
-    <link rel="icon" href="./assets/Logo.png">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">B-Nduna</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <title>B-Nduna's Portfolio</title>
+      <link rel="icon" href="./images/Logo.png">
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   </head>
+   <body class="main-layout">
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="" /></div>
       </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">B-Nduna</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile.png"/>
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Bongani Nduna</h1>
-        <p class="section__text__p2">Front-End Developer</p>
-        <div class="btn-container">
-          <button class="btn btn-color-2"
-            onclick="location.href='https://profile.indeed.com/p/bonganin-d187m2k'"
-          >
-            View Resume
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="https://img.icons8.com/?size=100&id=8808&format=png&color=000000"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/bongani-nduna-8196202b6'"
-          />
-          <img
-            src="https://img.icons8.com/?size=100&id=12599&format=png&color=000000"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://www.github.com/B-Nduna'"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/profile3.jpeg"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>4+ years <br />Software Development</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Tech Stack</h3>
-              <p>HTML, CSS, JavaScript (React.js)</p>
-              <p>Python (Django)</p>
-              <p>WordPress</p>
-              <p>SEO and UI/UX best practices</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>Hi there! 👋 I’m a front-end web developer passionate about creating seamless digital experiences. Off-screen, I dive into the world of sim racing, where precision fuels my creativity and adaptability. Whether it’s crafting clean code or nailing the perfect lap, I’m all about delivering flow and functionality. Let’s build something extraordinary together.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="experience">
-      <div class="experience-details-container">
-        <div class="about">
-          <h1 class="title">Skills</h1>
-          <div class="items">
-              <div class="item">
-                  <div class="inner">
-                      <img src="assets/item-1.jpg">
-                      <a href="#">Front-End Development:</a>
-                      <p>Responsive design, Cross- browser compatibility using HTML, CSS & JavaScript.</p>
-                  </div>
-              </div>
-              <div class="item">
-                  <div class="inner">
-                      <img src="assets/item-2.jpg">
-                      <a href="#">Server-side:</a>
-                      <p>Node.js, Express.js and databases like SQL & MongoDB.</p>
-                  </div>
-              </div>
-              <div class="item">
-                  <div class="inner">
-                      <img src="assets/item-3.jpg">
-                      <a href="#">Version Control:</a>
-                      <p>Test- Driven Development (TDD), Git & GitHub</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-      </div>
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-          <div class="about-containers">
-              <div class="details-container color-container">
-                  <div class="article-container">
-                      <img src="./assets/project-1.png" alt="Project 1" class="project-img" />
-                  </div>
-                  <h2 class="experience-sub-title project-title">Aura Herbal Store</h2>
-                  <div class="btn-container">
-                      <button class="btn btn-color-2 project-btn" onclick="location.href='https://b-nduna.github.io/Aura-Herbal-Store/'">Visit</button>
-                  </div>
-              </div>
-              <div class="details-container color-container">
-                  <div class="article-container">
-                      <img src="./assets/project-2.jpg" alt="Project 2" class="project-img" />
-                  </div>
-                  <h2 class="experience-sub-title project-title">XO Inks</h2>
-                  <div class="btn-container">
-                      <button class="btn btn-color-2 project-btn" onclick="location.href='https://b-nduna.github.io/XO-Inks/'">Visit</button>
-                  </div>
-              </div>
-              <div class="details-container color-container">
-                  <div class="article-container">
-                      <img src="./assets/project-3.jpg" alt="Project 3" class="project-img" />
-                  </div>
-                  <h2 class="experience-sub-title project-title">TradePanorama</h2>
-                  <div class="btn-container">
-                      <button class="btn btn-color-2 project-btn" onclick="location.href='https://b-nduna.github.io/TradePanorama/'">Visit</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+      <div id="mySidepanel" class="sidepanel">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+         <a href="#head-top">Home</a>
+         <a href="#about">About</a>
+         <a href="#projects">Projects</a>
+         <a href="#contact">Contact</a>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
+    function openNav() {
+        document.getElementById("mySidepanel").style.width = "250px";
+    }
 
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="https://img.icons8.com/?size=100&id=19407&format=png&color=000000"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:nduna700@gmail.com">Email</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/bongani-nduna-8196202b6/">LinkedIn</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="https://img.icons8.com/?size=100&id=32323&format=png&color=000000"
-            alt="Instagram icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.instagram.com/bnduna_7/">Instagram</a></p>
-        </div>
+    function closeNav() {
+        document.getElementById("mySidepanel").style.width = "0";
+    }
+</script>        
+     </div>
+     
+      
+      <header>
+         <div class="head-top">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-sm-3">
+                     <div class="logo">
+                        <a href="index.html"><img src="images/Log.png"/></a>
+                     </div>
+                  </div>
+                  <div class="col-sm-9">
+                     <ul class="email text_align_right">
+                        <li> <button class="openbtn" onclick="openNav()"><img src="images/menu_btn.png"></button></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+
+      <section id="profile">
+         <div class="section__pic-container">
+           <img src="./images/profile.png"/>
+         </div>
+         <div class="section__text">
+           <p class="section__text__p1">Hello, I'm</p>
+           <h1 class="title">Bongani Nduna</h1>
+           <p class="section__text__p2">Front-End Developer</p>
+           
+           <div id="socials-container">
+             <img
+               src="https://img.icons8.com/?size=100&id=8808&format=png&color=000000"
+               alt="My LinkedIn profile"
+               class="icon"
+               onclick="location.href='https://www.linkedin.com/in/bongani-nduna-8196202b6'"
+             />
+             <img
+               src="https://img.icons8.com/?size=100&id=12599&format=png&color=000000"
+               alt="My Github profile"
+               class="icon"
+               onclick="location.href='https://www.github.com/B-Nduna'"
+             />
+           </div>
+         </div>
+       </section>
+      
+      <section id="about">
+      <div id="about" class="about top_layer">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="titlepage">
+                     <h2>About Me</h2>
+                  </div>
+               </div>
+               <div class=" col-sm-12">
+                  <div class="about_box">
+                     <div class="row d_flex">
+                        <div class="col-md-5">
+                           <div class="about_box_text">
+                              <p>Hi there! 👋 I’m a front-end web developer passionate about creating seamless digital experiences. Off-screen, I dive into the world of sim racing, where precision fuels my creativity and adaptability. Whether it’s crafting clean code or nailing the perfect lap, I’m all about delivering flow and functionality. Lets build something extraordinary together.</p>
+                           </div>
+                        </div>
+                        <div class=" col-md-7  pppp">
+                           <div class="about_box_img">
+                              <figure><img src="images/about.png" alt="#" /></figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
       </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2024 B-Nduna. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+      
+      <div class="building">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Tech <span class="yello">Skills <br></span></h2>
+                     <section class="do_section layout_padding">
+                        <div class="container">
+                          <div class="do_container">
+                            <div class="box arrow-start arrow_bg">
+                              <div class="img-box">
+                                <img src="images/d-5.png" alt="">
+                              </div>
+                              <div class="detail-box">
+                                <p>UI/UX Design</p>
+                              </div>
+                            </div>
+                            <div class="box arrow-middle arrow_bg">
+                              <div class="img-box">
+                                <img src="images/d-2.png" alt="">
+                              </div>
+                              <div class="detail-box">
+                                <p>Front-End Dev</p>
+                              </div>
+                            </div>
+                            <div class="box">
+                              <div class="img-box">
+                                <img src="images/d-1.png" alt="">
+                              </div>
+                              <div class="detail-box">
+                                <p>SEO</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <section id="projects">
+      <div class="services_main">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Featured Projects</h2>
+                     <span>Explore some of my recent projects</span>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <ul class="nav nav-tabs md-tabs border_none" id="myTabMD" role="tablist">
+                  
+                  </ul>
+                  <div class="tab-content card back_bg" id="myTabContentMD">
+                     <div class="tab-pane fade show active" id="home-md" role="tabpanel" aria-labelledby="home-tab-md">
+                        <div class="row">
+                           <div class="col-md-4 col-sm-6 padding_0 margin_right20">
+                              <div class="services">
+                                 <div class="services_img">
+                                    <a href="https://b-nduna.github.io/Aura-Herbal-Store/" target="_blank">
+                                       <figure><img src="images/project-1.png" alt="TradePanorama" /></figure>
+                                       <div class="ho_dist">
+                                          <span>Aura-Herbal-Store</span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-4 col-sm-6 padding_0 margin_top70p margin_right20 margin_left20">
+                              <div class="services">
+                                 <div class="services_img">
+                                    <a href="https://b-nduna.github.io/XO-Inks/" target="_blank">
+                                       <figure><img src="images/project-2.png" alt="TradePanorama" /></figure>
+                                       <div class="ho_dist">
+                                          <span>XO-Inks</span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-4 col-sm-6 padding_0 margin_left20">
+                              <div class="services">
+                                 <div class="services_img">
+                                    <a href="https://b-nduna.github.io/TradePanorama/" target="_blank">
+                                       <figure><img src="images/project-3.png" alt="TradePanorama" /></figure>
+                                       <div class="ho_dist">
+                                          <span>TradePanorama</span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      
+      <section id="contact">
+      <div class="instant">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="titlepage text_align_left">
+                     <h2>Contact Me!</h2>
+                     <p>Interested in collaborating or learning more about my work? Feel free to reach out via email!</p>
+                     <a class="read_more" href="mailto:nduna700@gmail.com">Reach Out!</a>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="instant_img">
+                     <figure><img src="images/laptop.png" alt="Brand"/></figure>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </section>
+      
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-10 offset-md-1">
+                     <ul class="social_icon text_align_center">
+                        <li> <a href="https://wa.me/0603168301"><i class="fa fa-whatsapp"></i></a></li>
+                        <li> <a href="mailto:nduna700@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                        <li> <a href="https://www.linkedin.com/in/bongani-nduna-8196202b6/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                        <li> <a href="https://www.instagram.com/bnduna_7/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                     </ul>
+                  </div>
+            </div>
+            
+                  <div class="row">
+                     <div class="col-md-10 offset-md-1">
+                        <p>Copyright &#169; 2024 B-Nduna. All Rights Reserved.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/custom.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+   </body>
 </html>
