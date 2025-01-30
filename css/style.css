@@ -14,6 +14,13 @@
 
 /*--------------------------------------------------------------------- basic ---------------------------------------------------------------------*/
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
      color: #666666;
      font-size: 14px;
@@ -158,17 +165,12 @@ img {
      padding: 0;
 }
 
-.form-control:focus {
-     border-color: #ffffff !important;
-     box-shadow: 0 0 0 .2rem rgba(255, 255, 255, .25);
-}
-
 .navbar-form input {
      border: none !important;
 }
 
 .badge {
-     font-weight: 100;
+     font-weight: 100px;
 }
 
 blockquote {
@@ -235,7 +237,7 @@ button {
 }
 
 .loader img {
-     width: 200px;
+     width: 150px;
 }
 
 
@@ -955,63 +957,10 @@ ul.re_post li {
 
 .contact {
      padding-top: 90px;
-     padding-bottom: 90px;
+     padding-bottom: 20px;
 }
 
-#map {
-     height: 100%;
-     min-height: 477px;
-}
-
-.main_form {
-     max-width: 566px;
-     float: right;
-}
-
-.form-control {
-     border-radius: 11px;
-     margin-bottom: 20px;
-     padding: 0 20px;
-     background: transparent;
-     border: transparent;
-     box-shadow: 4px 0 14px rgba(02, 3, 8, 0.20);
-     height: 55px;
-}
-
-.form-control:focus {
-     box-shadow: inherit;
-     background: transparent;
-     box-shadow: 4px 0 14px rgba(02, 3, 8, 0.20);
-}
-
-.textarea {
-     background: transparent;
-     box-shadow: 4px 0 14px rgba(02, 3, 8, 0.20);
-     border: transparent;
-     padding: 0 20px;
-     width: 100%;
-     height: 176px;
-     color: #666666;
-     opacity: 1;
-     border-radius: 11px;
-     padding-top: 25px;
-     font-size: 17px;
-}
-
-.send {
-     margin: 0 auto;
-     display: block;
-     background: #540705;
-     color: #fff;
-     max-width: 160px;
-     padding: 10px 0px;
-     width: 100%;
-     font-size: 18px;
-     margin-top: 20px;
-     border-radius: 11px;
-}
-
-.send:hover {
+send:hover {
      background: #fd990c;
      color: #fff;
 }
@@ -1124,5 +1073,14 @@ ul.re_post li {
      }
      
    } 
+
+@media (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
 
 /** end contact **/
