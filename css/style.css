@@ -244,11 +244,10 @@ button {
 /*--------------------------------------------------------------------- header ---------------------------------------------------------------------*/
 
 header img {
-     height: 80px;
-     padding-top: 5px;
-     padding-bottom: 0.5px;
+     height: 100px;
+     padding-top: 20px;
+     
 }
-
 
 /** menu section **/
 
@@ -288,6 +287,7 @@ header img {
 }
 
 .openbtn {
+     position: center;
      cursor: pointer;
      background-color: transparent;
      color: rgb(0, 0, 0);
@@ -297,7 +297,7 @@ header img {
 .openbtn img {
      height: 30px;
      width: 45px;
-     padding-top: 5px;
+     padding-top: 10px;
      padding-bottom: 0.5px;
 }
 
@@ -1081,6 +1081,11 @@ send:hover {
     width: 100%;
     overflow-x: hidden;
   }
+  #profile {
+     height: 90vh;
+     padding-top: 90px;
+   }
+   .
 }
 
 /** end contact **/
