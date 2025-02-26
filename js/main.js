@@ -31,20 +31,20 @@
     return false;
   });
 
-	/*--/ Star ScrollTop /--*/
+	/*Star ScrollTop*/
 	$('.scrolltop-mf').on("click", function () {
 		$('html, body').animate({
 			scrollTop: 0
 		}, 1000);
 	});
 
-	/*--/ Star Counter /--*/
+	/*Star Counter*/
 	$('.counter').counterUp({
 		delay: 15,
 		time: 2000
 	});
 
-	/*--/ Star Scrolling nav /--*/
+	/*Star Scrolling nav*/
 	$('a.js-scroll[href*="#"]:not([href="#"])').on("click", function () {
 		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
 			var target = $(this.hash);
@@ -68,9 +68,9 @@
 		target: '#mainNav',
 		offset: navHeight
 	});
-	/*--/ End Scrolling nav /--*/
+	/*End Scrolling nav*/
 
-	/*--/ Navbar Menu Reduce /--*/
+	/*Navbar Menu Reduce*/
 	$(window).trigger('scroll');
 	$(window).on('scroll', function () {
 		var pixels = 50; 
@@ -89,7 +89,7 @@
 		}
 	});
 
-	/*--/ Star Typed /--*/
+	/*Star Typed*/
 	if ($('.text-slider').length == 1) {
     var typed_strings = $('.text-slider-items').text();
 		var typed = new Typed('.text-slider', {
@@ -101,34 +101,23 @@
 		});
 	}
 
-	/*--/ Testimonials owl /--*/
-	$('#testimonial-mf').owlCarousel({
-		margin: 20,
-		autoplay: true,
-		autoplayTimeout: 4000,
-		autoplayHoverPause: true,
-		responsive: {
-			0: {
-				items: 1,
-			}
-		}
-	});
-
 })(jQuery);
 
+// WhatsApp form submission
+
 document.getElementById("whatsappForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent actual form submission
+    event.preventDefault();
 
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let subject = document.getElementById("subject").value;
     let message = document.getElementById("message").value;
 
-    let phoneNumber = "+27603168301"; // Replace with your WhatsApp number (e.g., 27831234567 for South Africa)
+    let phoneNumber = "+27603168301"; 
 
     let whatsappMessage = `Hello!%0A%0AMy Name: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AMessage: ${message}`;
 
     let whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
 
-    window.open(whatsappURL, "_blank"); // Open WhatsApp chat in a new tab
+    window.open(whatsappURL, "_blank"); 
   });
