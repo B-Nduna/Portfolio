@@ -1,0 +1,17 @@
+{
+  "name": "Bongani Nduna Portfolio",
+  "short_name": "B.N Portfolio",
+  "description": "Portfolio website for Bongani Nduna, front-end developer and UI/UX designer.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06060d",
+  "theme_color": "#06060d",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
