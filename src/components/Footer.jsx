@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="section-inner footer-inner">
-        <p className="copyright">&copy; {year} Bongani Nduna. All rights reserved.</p>
+        <p className="copyright">&copy; {year} B-Nduna. All rights reserved.</p>
         <a href="#top" className="back-to-top" onClick={scrollTop} aria-label="Back to top">&#8593;</a>
       </div>
     </footer>

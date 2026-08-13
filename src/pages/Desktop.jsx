@@ -52,10 +52,7 @@ export default function Desktop() {
       setSearchParams(next, { replace: true });
       return;
     }
-    // No deep link: open with About already visible so visitors land on
-    // real content instead of an empty desktop they have to decode first.
     openWindow("about");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [booted]);
 
   if (!booted) return <Boot onDone={() => setBooted(true)} />;

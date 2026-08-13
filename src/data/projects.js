@@ -1,5 +1,5 @@
 export const projects = [
-  {
+    {
     title: "Aura Herbal Store",
     category: "Web Design",
     date: "May 2026",
@@ -8,12 +8,12 @@ export const projects = [
     blurb: "A clean, conversion-focused storefront for an herbal wellness brand.",
   },
   {
-    title: "Nkgong Design Studio",
-    category: "Web Design",
-    date: "Feb 2025",
-    img: "img/project-2.webp",
-    url: "https://b-nduna.github.io/Nkgong-Design-Studio/",
-    blurb: "A portfolio site for a design studio, built to put the work front and center.",
+    title: "Flawless Motors",
+    category: "Web Development",
+    date: "Jul 2026",
+    img: "img/project-6.webp",
+    url: "https://codevenientlab.github.io/Flawless-Motoring/",
+    blurb: "A React dealership site with a Three.js-powered 3D showroom.",
   },
   {
     title: "Xoli's Bakery",
@@ -32,20 +32,20 @@ export const projects = [
     blurb: "A modern company site built to give a growing business a professional digital presence.",
   },
   {
+    title: "Nkgong Design Studio",
+    category: "Web Design",
+    date: "Feb 2025",
+    img: "img/project-2.webp",
+    url: "https://b-nduna.github.io/Nkgong-Design-Studio/",
+    blurb: "A portfolio site for a design studio, built to put the work front and center.",
+  },
+  {
     title: "SoundScape App",
     category: "App Design",
     date: "Jun 2024",
     img: "img/SoundScape.webp",
     url: "https://www.figma.com/design/4z1K77jbS3NAAsudvXHzfR/SoundScape-App?node-id=0-1&m=dev&t=oiycOJ0Jn9JWUdTe-1",
     blurb: "A Figma app concept exploring music discovery and playback.",
-  },
-  {
-    title: "Flawless Motors",
-    category: "Web Development",
-    date: "Jul 2026",
-    img: "img/project-6.webp",
-    url: "https://codevenientlab.github.io/Flawless-Motoring/",
-    blurb: "A React dealership site with a Three.js-powered 3D showroom.",
   },
 ];
 

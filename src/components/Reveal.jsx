@@ -1,47 +1,35 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useRef, useState } from "react";
 
 const prefersReduced =
   typeof window !== "undefined" &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-export default function Reveal({ children, dir = "up", delay = 0, as: Tag = "div", className = "", ...rest }) {
+export default function Reveal({ children, as: Tag = "div", className = "", delay = 0, dir = "up", ...rest }) {
   const ref = useRef(null);
+  const [visible, setVisible] = useState(prefersReduced);
 
   useEffect(() => {
+    if (prefersReduced) return;
     const el = ref.current;
     if (!el) return;
-
-    if (prefersReduced) {
-      gsap.set(el, { opacity: 1, x: 0, y: 0, z: 0, rotateX: 0 });
-      return;
-    }
-
-    const fromVars = { opacity: 0, rotateX: -8 };
-    if (dir === "left") Object.assign(fromVars, { x: -70, z: -120 });
-    else if (dir === "right") Object.assign(fromVars, { x: 70, z: -120 });
-    else Object.assign(fromVars, { y: 70, z: -120 });
-
-    const tween = gsap.fromTo(
-      el,
-      fromVars,
-      {
-        opacity: 1, x: 0, y: 0, z: 0, rotateX: 0, duration: 1, ease: "power3.out", delay,
-        scrollTrigger: { trigger: el, start: "top 88%", toggleActions: "play none none reverse" },
-      }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
     );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
-    return () => {
-      tween.scrollTrigger && tween.scrollTrigger.kill();
-      tween.kill();
-    };
-  }, [dir, delay]);
+  const cls = ["reveal", `reveal-${dir}`, visible ? "reveal-in" : "", className].filter(Boolean).join(" ");
+  const style = visible ? { transitionDelay: `${delay}s` } : undefined;
 
   return (
-    <Tag ref={ref} className={className} style={{ opacity: 0 }} {...rest}>
+    <Tag ref={ref} className={cls} style={style} {...rest}>
       {children}
     </Tag>
   );

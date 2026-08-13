@@ -1,31 +1,29 @@
 import { Link } from "react-router-dom";
 import Reveal from "./Reveal.jsx";
 import { posts } from "../data/posts.js";
-import { asset } from "../lib/env.js";
 
 export default function Blog() {
   return (
     <section id="blog" className="section">
       <div className="section-inner">
         <div className="section-head">
-          <Reveal as="span" className="section-eyebrow">Writing</Reveal>
-          <Reveal as="h2" className="section-title">Blog</Reveal>
-          <Reveal as="p" className="section-sub">My journey into software development.</Reveal>
+          <Reveal as="div">
+            <span className="section-eyebrow">Writing</span>
+            <h2 className="section-title">Thoughts</h2>
+          </Reveal>
+          <Reveal as="p" className="section-sub" delay={0.1}>Notes on building, shipping, and the odd detour into sim racing.</Reveal>
         </div>
-        <div className="blog-grid">
+        <div className="thoughts-list">
           {posts.map((post, i) => (
-            <Reveal
-              as={Link}
-              dir="up"
-              delay={(i % 3) * 0.08}
-              className="blog-card"
-              to={`/blog/${post.slug}`}
-              key={post.slug}
-            >
-              <div className="blog-media"><img src={asset(post.img)} alt={post.title} loading="lazy" /></div>
-              <span className="blog-cat">{post.category}</span>
-              <h3>{post.title}</h3>
-              <p>{post.excerpt}</p>
+            <Reveal as={Link} dir="left" delay={i * 0.08} className="thought-row" to={`/blog/${post.slug}`} key={post.slug}>
+              <div className="thought-left">
+                <span className="thought-date">{post.date}</span>
+                <div>
+                  <h3 className="thought-title">{post.title}</h3>
+                  <span className="thought-excerpt">{post.excerpt}</span>
+                </div>
+              </div>
+              <span className="thought-arrow">&#8599;</span>
             </Reveal>
           ))}
         </div>

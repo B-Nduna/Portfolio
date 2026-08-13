@@ -13,8 +13,8 @@ export default function BlogPost() {
   }, [slug]);
 
   useEffect(() => {
-    if (post) document.title = `${post.title} | Bongani Nduna`;
-    return () => { document.title = "Bongani Nduna | Front-End Developer & Designer"; };
+    if (post) document.title = `${post.title} | B-Nduna`;
+    return () => { document.title = "B-Nduna | Front-End Developer & Designer"; };
   }, [post]);
 
   const html = useMemo(() => (post ? marked.parse(post.content) : ""), [post]);
@@ -26,35 +26,39 @@ export default function BlogPost() {
   return (
     <main className="post-page">
       <div className="section-inner post-inner">
-        <a href={`${HOME_BASE}/?open=blog`} className="post-back">&larr; Back to Portfolio</a>
+        <a href={`${HOME_BASE}/#blog`} className="post-back">&larr; Back to Portfolio</a>
 
-        <div className="glass-panel post-panel">
-          <span className="panel-tag">{post.category}</span>
+        <div className="post-panel">
+          <span className="section-eyebrow">{post.category}</span>
           <h1 className="post-title">{post.title}</h1>
-          <p className="post-byline">By Bongani Nduna &middot; {post.date}</p>
+          <p className="post-byline">By B-Nduna &middot; {post.date}</p>
           <div className="post-media"><img src={asset(post.img)} alt={post.title} /></div>
           <article className="post-body" dangerouslySetInnerHTML={{ __html: html }} />
         </div>
 
-        <div className="glass-panel post-cta">
-          <h3 className="panel-heading">Like what you see?</h3>
-          <p className="lead">I build sites like this one for real businesses. Let&rsquo;s talk about yours.</p>
-          <div className="hero-actions" style={{ justifyContent: "flex-start" }}>
-            <a href={`${HOME_BASE}/?open=contact`} className="btn btn-primary"><span>Get In Touch</span></a>
-            <a href={`${HOME_BASE}/?open=work`} className="btn btn-ghost"><span>See My Work</span></a>
+        <div className="post-cta">
+          <h3>Like what you see?</h3>
+          <p>I build sites like this one for real businesses. Let&rsquo;s talk about yours.</p>
+          <div className="hero-actions" style={{ marginTop: 0 }}>
+            <a href={`${HOME_BASE}/#contact`} className="btn btn-primary"><span>Get In Touch</span></a>
+            <a href={`${HOME_BASE}/#work`} className="btn btn-ghost"><span>See My Work</span></a>
           </div>
         </div>
 
         {more.length > 0 && (
           <div className="post-more">
             <span className="section-eyebrow">Keep Reading</span>
-            <div className="blog-grid">
+            <div className="thoughts-list">
               {more.map((p) => (
-                <Link to={`/blog/${p.slug}`} className="blog-card" key={p.slug}>
-                  <div className="blog-media"><img src={asset(p.img)} alt={p.title} loading="lazy" /></div>
-                  <span className="blog-cat">{p.category}</span>
-                  <h3>{p.title}</h3>
-                  <p>{p.excerpt}</p>
+                <Link to={`/blog/${p.slug}`} className="thought-row" key={p.slug}>
+                  <div className="thought-left">
+                    <span className="thought-date">{p.date}</span>
+                    <div>
+                      <h3 className="thought-title">{p.title}</h3>
+                      <span className="thought-excerpt">{p.excerpt}</span>
+                    </div>
+                  </div>
+                  <span className="thought-arrow">&#8599;</span>
                 </Link>
               ))}
             </div>

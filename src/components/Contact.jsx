@@ -28,7 +28,6 @@ const FIELDS = [
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
-
   const onChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
   const onSubmit = (e) => {
@@ -40,12 +39,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section">
+    <section id="contact" className="section contact-section">
       <div className="section-inner contact-grid">
-        <Reveal dir="left" className="contact-intro">
+        <Reveal as="div" dir="left">
           <span className="section-eyebrow">Let&rsquo;s Talk</span>
-          <h2 className="section-title">Contact Me</h2>
-          <p className="section-sub">Have a project in mind? Reach out directly, or send a message and I&rsquo;ll reply on WhatsApp.</p>
+          <h2 className="contact-title">Have a project<br />in mind?</h2>
+          <p className="contact-sub">Fill out the form, reach out directly, or send a message and I&rsquo;ll reply on WhatsApp.</p>
           <div className="contact-cta">
             <a href="mailto:nduna700@gmail.com" className="btn btn-primary"><span>Email Me</span></a>
             <a href="https://wa.me/+27603168301" target="_blank" rel="noopener noreferrer" className="btn btn-ghost"><span>WhatsApp Me</span></a>
@@ -59,13 +58,10 @@ export default function Contact() {
           </div>
         </Reveal>
 
-        <Reveal dir="right" as="form" className="glass-panel contact-form" onSubmit={onSubmit}>
+        <Reveal as="form" dir="right" delay={0.1} className="contact-form" onSubmit={onSubmit}>
           {FIELDS.map((f) => (
             <div className="field" key={f.id}>
-              <input
-                type={f.type} name={f.id} id={f.id} placeholder=" " required
-                value={form[f.id]} onChange={onChange}
-              />
+              <input type={f.type} name={f.id} id={f.id} placeholder=" " required value={form[f.id]} onChange={onChange} />
               <label htmlFor={f.id}>{f.label}</label>
             </div>
           ))}

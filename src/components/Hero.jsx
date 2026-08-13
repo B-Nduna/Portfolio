@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState, lazy, Suspense } from "react";
-import { gsap } from "gsap";
+import { useEffect, useState } from "react";
+import Reveal from "./Reveal.jsx";
+import { asset } from "../lib/env.js";
 
-const HeroCrystal = lazy(() => import("./HeroCrystal.jsx"));
-
-const NAME = "Bongani Nduna";
-const ROLES = ["Web Designer", "UI/UX Designer", "Frontend Developer"];
+const RESUME_URL = "https://profile.indeed.com/p/bonganin-d187m2k";
+const ROLES = ["Frontend Developer", "React Developer", "UI/UX Designer"];
 
 const prefersReduced =
   typeof window !== "undefined" &&
@@ -22,25 +21,16 @@ function useTypedRole() {
       if (!deleting) {
         ci++;
         setText(word.slice(0, ci));
-        if (ci === word.length) {
-          deleting = true;
-          timer = setTimeout(tick, 1400);
-          return;
-        }
-        timer = setTimeout(tick, 70);
+        if (ci === word.length) { deleting = true; timer = setTimeout(tick, 1500); return; }
+        timer = setTimeout(tick, 75);
       } else {
         ci--;
         setText(word.slice(0, ci));
-        if (ci === 0) {
-          deleting = false;
-          ri = (ri + 1) % ROLES.length;
-          timer = setTimeout(tick, 300);
-          return;
-        }
+        if (ci === 0) { deleting = false; ri = (ri + 1) % ROLES.length; timer = setTimeout(tick, 300); return; }
         timer = setTimeout(tick, 30);
       }
     };
-    timer = setTimeout(tick, 400);
+    timer = setTimeout(tick, 500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -49,60 +39,38 @@ function useTypedRole() {
 
 export default function Hero() {
   const typed = useTypedRole();
-  const titleRef = useRef(null);
-  const eyebrowRef = useRef(null);
-  const roleRef = useRef(null);
-  const actionsRef = useRef(null);
-
-  useEffect(() => {
-    const chars = titleRef.current.querySelectorAll(".char");
-    if (prefersReduced) {
-      gsap.set([eyebrowRef.current, chars, roleRef.current, actionsRef.current], { opacity: 1, y: 0, rotateX: 0 });
-      return;
-    }
-    const tl = gsap.timeline({ delay: 0.3 });
-    tl.fromTo(eyebrowRef.current, { opacity: 0, y: -14 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" })
-      .fromTo(chars, { opacity: 0, y: 60, rotateX: -90, transformOrigin: "50% 100%" }, { opacity: 1, y: 0, rotateX: 0, stagger: 0.035, duration: 0.9, ease: "back.out(1.6)" }, "-=.4")
-      .fromTo(roleRef.current, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6 }, "-=.5")
-      .fromTo(actionsRef.current, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6 }, "-=.4");
-
-    // Without this, React StrictMode's dev-only double-invoke of effects
-    // creates a second overlapping timeline on the same elements, which
-    // snaps opacity back to 0 mid-animation (looks like the hero content
-    // "disappearing" right after it appears).
-    return () => tl.kill();
-  }, []);
 
   return (
     <header id="top" className="hero">
-      <div className="hero-vignette" />
-      <div className="hero-grid">
-        <div className="hero-visual">
-          <Suspense fallback={<div className="hero-visual-fallback" />}>
-            <HeroCrystal />
-          </Suspense>
+      <Reveal as="div" className="hero-meta-row" dir="left">
+        <p className="hero-eyebrow">Front-End Developer &mdash; South Africa</p>
+        <span className="status-badge"><span className="status-dot" />Available for work</span>
+      </Reveal>
+
+      <Reveal as="div" className="hero-panel" dir="pop" delay={0.08}>
+        <div className="hero-panel-photo">
+          <img src={asset("img/profile.webp")} alt="Portrait" />
         </div>
-        <div className="hero-content">
-          <p className="hero-eyebrow" ref={eyebrowRef}>Front-End Developer &mdash; South Africa</p>
-          <h1 className="hero-title" ref={titleRef} aria-label={NAME}>
-            {NAME.split("").map((ch, i) => (
-              <span className="char" key={i}>{ch === " " ? "\u00A0" : ch}</span>
-            ))}
-          </h1>
-          <p className="hero-role" ref={roleRef}>
-            <span>{typed}</span><span className="typed-cursor">|</span>
-          </p>
-          <div className="hero-actions" ref={actionsRef}>
-            <a href="#work" className="btn btn-primary"><span>View Work</span></a>
-            <a href="#contact" className="btn btn-ghost"><span>Get In Touch</span></a>
-            <a href="https://profile.indeed.com/p/bonganin-d187m2k" className="btn btn-ghost" target="_blank" rel="noopener noreferrer"><span>View Resume</span></a>
-          </div>
+        <p className="hero-typed">
+          <span>{typed}</span><span className="typed-cursor">|</span>
+        </p>
+      </Reveal>
+
+      <div className="marquee">
+        <div className="marquee-track">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <span key={i}>
+              Front-End Developer <span className="accent">&mdash;</span> React <span className="accent">&mdash;</span> UI/UX <span className="accent">&mdash;</span> Web Design <span className="accent">&mdash;</span> Available For Work <span className="accent">&mdash;</span>
+            </span>
+          ))}
         </div>
       </div>
-      <a href="#about" className="scroll-cue" aria-label="Scroll down">
-        <span className="scroll-cue-line" />
-        <span className="scroll-cue-text">Scroll</span>
-      </a>
+
+      <Reveal as="div" className="hero-actions" delay={0.15}>
+        <a href="#work" className="btn btn-primary"><span>View Work</span></a>
+        <a href="#contact" className="btn btn-ghost"><span>Get In Touch</span></a>
+        <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost"><span>Resume</span></a>
+      </Reveal>
     </header>
   );
 }
