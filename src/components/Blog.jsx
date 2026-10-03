@@ -4,26 +4,18 @@ import { posts } from "../data/posts.js";
 
 export default function Blog() {
   return (
-    <section id="blog" className="section">
+    <section id="blog" className="section section-rule">
       <div className="section-inner">
         <div className="section-head">
-          <Reveal as="div">
-            <span className="section-eyebrow">Writing</span>
-            <h2 className="section-title">Thoughts</h2>
-          </Reveal>
-          <Reveal as="p" className="section-sub" delay={0.1}>Notes on building, shipping, and the odd detour into sim racing.</Reveal>
+          <Reveal as="div"><span className="section-eyebrow">Notes / 04</span><h2 className="section-title">How I think while building.</h2></Reveal>
+          <Reveal as="p" className="section-sub" delay={0.08}>Short notes on frontend craft, learning in public and the habits behind the work.</Reveal>
         </div>
         <div className="thoughts-list">
-          {posts.map((post, i) => (
-            <Reveal as={Link} dir="left" delay={i * 0.08} className="thought-row" to={`/blog/${post.slug}`} key={post.slug}>
-              <div className="thought-left">
-                <span className="thought-date">{post.date}</span>
-                <div>
-                  <h3 className="thought-title">{post.title}</h3>
-                  <span className="thought-excerpt">{post.excerpt}</span>
-                </div>
-              </div>
-              <span className="thought-arrow">&#8599;</span>
+          {posts.map((post, index) => (
+            <Reveal as={Link} className="thought-row" to={`/blog/${post.slug}`} dir="left" delay={index * 0.05} key={post.slug}>
+              <span className="thought-index">0{index + 1}</span>
+              <div className="thought-main"><span className="thought-date">{post.date} · {post.category}</span><h3>{post.title}</h3><p>{post.excerpt}</p></div>
+              <span className="thought-arrow">↗</span>
             </Reveal>
           ))}
         </div>

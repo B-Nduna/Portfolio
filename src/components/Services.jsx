@@ -1,31 +1,27 @@
 import Reveal from "./Reveal.jsx";
 
 const SERVICES = [
-  { num: "01", title: "Web Design", tags: ["Brand-led layouts", "Responsive UI", "Design systems"] },
-  { num: "02", title: "Frontend Development", tags: ["React / Vite", "Performance", "Accessibility"] },
-  { num: "03", title: "E-Commerce & Booking", tags: ["Cart flows", "Payments", "Scheduling"] },
-  { num: "04", title: "Consulting", tags: ["Digital strategy", "SEO basics", "Ongoing support"] },
+  { num: "01", title: "React interfaces", text: "Component-led product UI with clear state, responsive behaviour and sensible architecture.", tags: ["React", "Vite", "JavaScript"] },
+  { num: "02", title: "Frontend product builds", text: "From static concepts to working apps with authentication, databases and real user flows.", tags: ["Supabase", "REST", "Auth"] },
+  { num: "03", title: "UI engineering", text: "Design translated into precise, accessible interfaces without losing the intent in implementation.", tags: ["CSS", "Accessibility", "Motion"] },
+  { num: "04", title: "Web delivery", text: "Performance, technical SEO, deployment, analytics and the last 10% needed to ship confidently.", tags: ["GitHub Pages", "SEO", "QA"] },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="section">
+    <section id="services" className="section section-dark">
       <div className="section-inner">
         <div className="section-head">
-          <Reveal as="div">
-            <span className="section-eyebrow">What I Do</span>
-            <h2 className="section-title">Services</h2>
-          </Reveal>
-          <Reveal as="p" className="section-sub" delay={0.1}>From first sketch to a live site your customers actually use.</Reveal>
+          <Reveal as="div"><span className="section-eyebrow">Capabilities / 02</span><h2 className="section-title">What I ship</h2></Reveal>
+          <Reveal as="p" className="section-sub" delay={0.08}>Useful frontend work, with enough design sense to make it look deliberate and enough engineering discipline to keep it maintainable.</Reveal>
         </div>
         <div className="services-grid">
-          {SERVICES.map((s, i) => (
-            <Reveal as="div" className="service-card" dir="up" delay={i * 0.08} key={s.num}>
-              <span className="service-num">{s.num}</span>
-              <h3 className="service-title">{s.title}</h3>
-              <div className="service-tags">
-                {s.tags.map((t) => <span key={t}>{t}</span>)}
-              </div>
+          {SERVICES.map((service, index) => (
+            <Reveal as="article" className="service-card" dir="up" delay={index * 0.06} key={service.num}>
+              <span className="service-num">{service.num}</span>
+              <h3>{service.title}</h3>
+              <p>{service.text}</p>
+              <div className="service-tags">{service.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
             </Reveal>
           ))}
         </div>

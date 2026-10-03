@@ -2,43 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // Restores the real path that 404.html encoded into the query
-      // string, before React Router mounts and reads the URL.
-      (function (l) {
-        if (l.search[1] === "/") {
-          var decoded = l.search
-            .slice(1)
-            .split("&")
-            .map(function (s) {
-              return s.replace(/~and~/g, "&");
-            })
-            .join("?");
-          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
-        }
-      })(window.location);
+    <script>
+      (function(l){if(l.search[1]==="/"){var decoded=l.search.slice(1).split("&").map(function(s){return s.replace(/~and~/g,"&")}).join("?");window.history.replaceState(null,null,l.pathname.slice(0,-1)+decoded+l.hash)}})(window.location);
     </script>
-    <title>B-Nduna | Front-End Developer & Designer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="Front-End Developer, Web Developer, UI/UX Designer, React, WordPress, Freelance Web Design, South Africa" />
-    <meta name="description" content="I'm B-Nduna, a Front-End Developer specializing in modern, responsive web design and development using React, WordPress, and UI/UX principles. Let's build something amazing." />
-    <meta name="author" content="B-Nduna" />
+    <title>Bongani Nduna — React / Frontend Developer</title>
+    <meta name="description" content="Portfolio of Bongani Nduna, a React and frontend developer in South Africa building polished, responsive digital products and web experiences." />
+    <meta name="keywords" content="Bongani Nduna, React Developer, Frontend Developer, JavaScript Developer, Web Developer, South Africa, Mahikeng" />
+    <meta name="author" content="Bongani Nduna" />
     <meta name="robots" content="index, follow" />
-
-    <meta property="og:title" content="B-Nduna" />
-    <meta property="og:description" content="Custom websites and digital solutions tailored for small businesses in South Africa." />
+    <meta name="theme-color" content="#f4f1ea" />
+    <meta property="og:title" content="Bongani Nduna — React / Frontend Developer" />
+    <meta property="og:description" content="React developer focused on polished interfaces, product UI and frontend systems." />
     <meta property="og:image" content="https://b-nduna.github.io/Portfolio/img/profile.webp" />
     <meta property="og:url" content="https://b-nduna.github.io/Portfolio/" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="B-Nduna" />
-    <meta name="twitter:description" content="Custom websites, UI/UX, and branding for startups and businesses." />
-
-    <link rel="icon" href="img/profile.webp" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
